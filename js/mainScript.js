@@ -1,7 +1,7 @@
 const listLinks = [
     "/Users/jakeopie/weatherApp/images/sunnyWeather.jpeg",
     "/Users/jakeopie/weatherApp/images/rainyWeather.jpeg",
-    "/Users/jakeopie/weatherApp/images/thunderStorm.jpeg"
+    "/Users/jakeopie/weatherApp/images/starsInSky.jpeg"
 ]
 
 let w = 0

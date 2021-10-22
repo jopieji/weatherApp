@@ -4,6 +4,7 @@ h1, h4 {
 }
 
 .labels {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
 }
 
@@ -13,9 +14,10 @@ h1, h4 {
 
 .locationSubmit {
     background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border: solid 2px #146bd9;
     color: black;
-    padding: 4px 6px;
+    padding: 3px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -32,4 +34,41 @@ h1, h4 {
     background-image: url('/Users/jakeopie/weatherApp/images/rainyWeather.jpeg');
   }
 
-  
+  #dataOne, #dataTwo, #dataThree, #dataFour, #dataFive, #dataSix {
+    border-right: 2px solid white;
+    height: 200px;
+    position: relative;
+    padding: 10px 10px;
+  }
+
+  #dataSeven {
+    padding: 10px 10px;
+  }
+
+  #dayOne, #dayTwo, #dayThree, #dayFour, #dayFive, #daySix {
+    border-right: 2px solid white;
+    height: 200px;
+    position: relative;
+    padding: 10px 10px;
+  }
+
+  #daySeven {
+    padding: 10px 10px;
+  }
+
+  #daysInWeek, #weatherData {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  #mainHeader {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  #spacer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  #weatherGrid, .normalHr {
+    border-top: 2px solid white;
+  }

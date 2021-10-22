@@ -12,8 +12,9 @@
 </head>
 
 <body id="bodybg">
-    <h1>Weather App</h1>
-    <hr>
+    <h1 id="mainHeader">Weather App</h1>
+    <hr class="normalHr">
+    <br>
     <br>
     <div class="location">
         <label for='locationField' class="labels">Location</label>
@@ -22,16 +23,33 @@
     </div>
     <br>
     <br>
-    <hr>
+    <hr class="normalHr">
     <br>
-    <div class='weatherData'>
-        <h4 id=dayOne>Monday</h4>
-        <h4 id=dayTwo>Tuesday</h4>
-        <h4 id=dayThree>Wednesday</h4>
-        <h4 id=dayFour>Thursday</h4>
-        <h4 id=dayFive>Friday</h4>
-        <h4 id=daySix>Saturday</h4>
-        <h4 id=daySeven>Sunday</h4>
+    <div id='spacer'>
+    </div>
+    <div id='daysInWeek'>
+        <h4 id='days'>
+            <span id='dayOne'> Monday </span>
+            <span id='dayTwo'> Tuesday </span>
+            <span id='dayThree'> Wednesday </span>
+            <span id='dayFour'> Thursday </span>
+            <span id='dayFive'> Friday </span>
+            <span id='daySix'> Saturday </span>
+            <span id='daySeven'> Sunday </span>
+        </h4>
+    </div>
+    <hr id="weatherGrid">
+    <div id="weatherData">
+        <h4 id='data'>
+            <span id='dataOne'> 52 </span>
+            <span id='dataTwo'> 60 </span>
+            <span id='dataThree'> 55 </span>
+            <span id='dataFour'> 59 </span>
+            <span id='dataFive'> 67 </span>
+            <span id='dataSix'> 65 </span>
+            <span id='dataSeven'> 70 </span>
+        </h4>
+
     </div>
     <br>
     <button onclick="changeBg();">Change Background</button>
