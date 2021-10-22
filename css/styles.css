@@ -1,20 +1,25 @@
 h1, h4 {
   color: white;
+  text-align: center;
 }
 
 .labels {
   color: white;
 }
 
+.location {
+  text-align: center;
+}
+
 .locationSubmit {
     background-color: white;
     border: solid 2px #146bd9;
     color: black;
-    padding: 12px;
+    padding: 4px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 10px;
     transition-duration: 0.3s;
   }
   .locationSubmit:hover {
