@@ -8,14 +8,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="mainScript.js" async defer></script>
+    <script src="js/mainScript.js" async defer></script>
 </head>
 
-<body class="bodybg">
+<body id="bodybg">
     <h1>Weather App</h1>
     <hr>
     <br>
-    <label for='locationField'>Location</label>
+    <label for='locationField' class="labels">Location</label>
     <input type="text" id="locationField">
     <button class="locationSubmit">Submit</button>
     <br>
@@ -29,6 +29,8 @@
     <h4 id=dayFive>Friday</h4>
     <h4 id=daySix>Saturday</h4>
     <h4 id=daySeven>Sunday</h4>
+    <br>
+    <button onclick="changeBg();">Change Background</button>
 
 </body>
 
