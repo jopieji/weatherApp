@@ -16,3 +16,9 @@ function changeBg() {
     document.body.style.background = `url(${listLinks[w]}) no-repeat`;
     document.body.style.backgroundSize = 'cover';
 }
+
+function changeLoc() {
+    let header = document.getElementById('mainHeader')
+    let field = document.getElementById("locationField").value
+    header.innerHTML = field
+}

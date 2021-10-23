@@ -14,6 +14,8 @@
 <body id="bodybg">
     <h1 id="mainHeader">Weather App</h1>
     <br>
+    <div><h4>Current Location: Chicago</h4></div>
+    <br>
     <hr class="normalHr">
     <br>
     <div id='spacer'>
@@ -40,7 +42,6 @@
             <span id='dataSix'> 65 </span>
             <span id='dataSeven'> 70 </span>
         </h4>
-
     </div>
     <div id='spacer'>
     </div>
@@ -49,12 +50,11 @@
     </div>
     <div class="location">
         <label for='locationField' class="labels">Location</label>
-        <input type="text" id="locationField">
-        <button class="locationSubmit">Submit</button>
+        <input type="text" value="" id="locationField">
+        <button id="locationSubmit" onclick="changeLoc()">Submit</button>
     </div>
     <br>
     <button onclick="changeBg();">Change Background</button>
-    
     <div id="bot-links">
         <a href="https://github.com/jopieji">Github</a>
     </div>
