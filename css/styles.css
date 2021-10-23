@@ -1,3 +1,9 @@
+a {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
 h1, h4 {
   color: white;
   text-align: center;
@@ -32,6 +38,12 @@ h1, h4 {
   #bodybg {
     background-size:cover;
     background-image: url('/Users/jakeopie/weatherApp/images/rainyWeather.jpeg');
+  }
+
+  #bot-links {
+    position: relative;
+    padding-left: 50%;
+    padding-top: 240px;
   }
 
   #dataOne, #dataTwo, #dataThree, #dataFour, #dataFive, #dataSix {
