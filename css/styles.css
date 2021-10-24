@@ -56,6 +56,33 @@ h1, h4 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
+  #landingBg {
+    background-color: #146bd9;
+  }
+
+  #landingSpacer {
+    padding-top: 250px;
+  }
+
+  #landingSubmit {
+    background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: solid 2px #146bd9;
+    color: black;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    transition-duration: 0.3s;
+  }
+
+  #landingSubmit:hover {
+    background-color: black;
+    color: white;
+  }
+
+
   #locationSubmit {
     background-color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

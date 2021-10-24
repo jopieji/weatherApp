@@ -20,5 +20,7 @@ function changeBg() {
 function changeLoc() {
     let header = document.getElementById('mainHeader')
     let field = document.getElementById("locationField").value
+    // code below gets the value of the input field
     header.innerHTML = field
 }
+
