@@ -8,13 +8,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/mainScript.js" async defer></script>
+    <script type="text/javascript" src="js/mainScript.js" async defer></script>
+    <script type="text/javascript" src="js/key.js"></script>
 </head>
 
 <body id="bodybg">
     <h1 id="mainHeader">Weather App</h1>
     <br>
-    <div><h4>Current Location: Chicago</h4></div>
+    <div><h4>Current Location: <span id="city">Chicago</span></h4></div>
     <br>
     <hr class="normalHr">
     <br>
@@ -34,13 +35,13 @@
     <hr id="weatherGrid">
     <div id="weatherData">
         <h4 id='data'>
-            <span id='dataOne'> 52 </span>
-            <span id='dataTwo'> 60 </span>
-            <span id='dataThree'> 55 </span>
-            <span id='dataFour'> 59 </span>
-            <span id='dataFive'> 67 </span>
-            <span id='dataSix'> 65 </span>
-            <span id='dataSeven'> 70 </span>
+            <span id='dataOne' id="cond"> 0 </span>
+            <span id='dataTwo' id="temp"> 0 </span>
+            <span id='dataThree'> 0 </span>
+            <span id='dataFour'> 0 </span>
+            <span id='dataFive'> 0 </span>
+            <span id='dataSix'> 0 </span>
+            <span id='dataSeven'> 0 </span>
         </h4>
     </div>
     <div id='spacer'>
@@ -51,7 +52,7 @@
     <div class="location">
         <label for='locationField' class="labels">Location</label>
         <input type="text" value="" id="locationField">
-        <button id="locationSubmit" onclick="changeLoc()">Submit</button>
+        <button id="locationSubmit" onclick="getWeather()">Submit</button>
     </div>
     <br>
     <button onclick="changeBg();">Change Background</button>

@@ -1,8 +1,13 @@
+
+
 const listLinks = [
     "/Users/jakeopie/weatherApp/images/sunnyWeather.jpeg",
     "/Users/jakeopie/weatherApp/images/rainyWeather.jpeg",
     "/Users/jakeopie/weatherApp/images/starsInSky.jpeg"
 ]
+
+//var key = 'b22ee093d19114446572f72c3a77645b'
+
 
 let w = 0
 
@@ -23,4 +28,10 @@ function changeLoc() {
     // code below gets the value of the input field
     header.innerHTML = field
 }
+
+function tryFUNC() {
+    let head = document.getElementById('mainHeader')
+    head.innerHTML = OWA_KEY
+}
+
 
