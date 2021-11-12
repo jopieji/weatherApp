@@ -48,3 +48,56 @@ class Theme {
 
 
 }
+
+class Data {
+    constructor(location, color) {
+        this.location = location;
+        this.current_color = color;
+        this.today_temps = 0;
+        this.today_conditions = 'Condition';
+    }
+
+    //change location in header
+    change_location(loc) {
+        this.set_current_location(loc);
+        titleHandle.innerHTML = toTitle(loc);
+    }
+
+    //change today's temperature
+    change_today_temps(temp) {
+        this.set_today_temps(temp);
+        displayHandle.innerHTML = this.get_today_temps();
+    } 
+
+    //change today's condition
+    change_today_conditions(cond) {
+        this.set_today_conditions(cond);
+        condHandle.innerHTML = this.get_today_conditions();
+    }
+
+
+    get_current_location() {
+        return this.location;
+    }
+
+    set_current_location(location) {
+        this.location = location;
+    }
+
+    get_today_temps() {
+        return this.today_temps;
+    }
+
+    set_today_temps(temp) {
+        this.today_temps = temp;
+    }
+
+    get_today_conditions() {
+        return this.today_conditions;
+    }
+
+    set_today_conditions(cond) {
+        this.today_conditions = cond;
+    }
+
+}
