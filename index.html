@@ -19,29 +19,31 @@
     <br>
     <div id='spacer'>
     </div>
-    <p id="temp">Hello</p>
-    <p id="cond">Hello</p>
+    <p class="disp" id="temp">Hello</p>
+    <p class="disp" id="cond">Hello</p>
+    <input type='color' id="colorPicker" name="colorPicker">
+    <button id="colorSubmit" onclick="changeCol()">Submit Color</button>
     <div id='daysInWeek'>
         <h4 id='days'>
-            <span id='dayOne'> Monday </span>
-            <span id='dayTwo'> Tuesday </span>
-            <span id='dayThree'> Wednesday </span>
-            <span id='dayFour'> Thursday </span>
-            <span id='dayFive'> Friday </span>
-            <span id='daySix'> Saturday </span>
-            <span id='daySeven'> Sunday </span>
+            <span class="displayGrid" id='dayOne'> Monday </span>
+            <span class="displayGrid" id='dayTwo'> Tuesday </span>
+            <span class="displayGrid" id='dayThree'> Wednesday </span>
+            <span class="displayGrid" id='dayFour'> Thursday </span>
+            <span class="displayGrid" id='dayFive'> Friday </span>
+            <span class="displayGrid" id='daySix'> Saturday </span>
+            <span class="displayGrid" id='daySeven'> Sunday </span>
         </h4>
     </div>
     <hr id="weatherGrid">
     <div id="weatherData">
         <h4 id='data'>
-            <span id="dataOne"> 0 </span>
-            <span id="dataTwo"> 0 </span>
-            <span id='dataThree'> 0 </span>
-            <span id='dataFour'> 0 </span>
-            <span id='dataFive'> 0 </span>
-            <span id='dataSix'> 0 </span>
-            <span id='dataSeven'> 0 </span>
+            <span class="displayGrid" id="dataOne"> 0 </span>
+            <span class="displayGrid" id="dataTwo"> 0 </span>
+            <span class="displayGrid" id='dataThree'> 0 </span>
+            <span class="displayGrid" id='dataFour'> 0 </span>
+            <span class="displayGrid" id='dataFive'> 0 </span>
+            <span class="displayGrid" id='dataSix'> 0 </span>
+            <span class="displayGrid" id='dataSeven'> 0 </span>
         </h4>
     </div>
     <div id='spacer'>
@@ -61,6 +63,7 @@
     </div>
     <script type="text/javascript" src="js/mainScript.js" async defer></script>
     <script type="text/javascript" src="js/key.js"></script>
+    <script type="text/javascript" src=js/maincode.js></script>
 </body>
 
 </html>

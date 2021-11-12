@@ -10,6 +10,14 @@ h1, h4 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.disp {
+  color: white;
+}
+
+.displayGrid {
+  color: white;
+}
+
 .labels {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
