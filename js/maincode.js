@@ -12,7 +12,7 @@ class Theme {
         this.display_handle.style.color = this.get_current_color();
         this.data_handle.style.color = this.get_current_color();
         this.title_handle.style.color = this.get_current_color();
-        this.data_handle.render();
+        this.data_handle.style.borderRight = `10px solid ${this.get_current_color()}`;
     }
 
     paint_default_color() {
