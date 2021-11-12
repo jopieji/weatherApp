@@ -119,19 +119,20 @@ class Background {
     //cycle_background to next background; mainly used for testing
     //can add button to call this method
     cycle_background() {
-        if (get_current_background() == 2) {
-            set_current_background(0);
+        let myNum = this.get_current_background();
+        if (myNum == 2) {
+            this.set_current_background(0);
         }
         else {
-            set_current_background(get_current_background() += 1);
+            this.set_current_background(myNum += 1);
         }
-        document.body.style.background = `url(${_links[get_current_background()]}) no-repeat`;
+        document.body.style.background = `url(${this._links[this.get_current_background()]}) no-repeat`;
         document.body.style.backgroundSize = 'cover';
     }
 
     //set background to default in case of extra condition (hail, etc)
     default_background() {
-        document.body.style.background = `url(${_links[0]}) no-repeat`;
+        document.body.style.background = `url(${this._links[0]}) no-repeat`;
         document.body.style.backgroundSize = 'cover';
     }
 
@@ -141,12 +142,12 @@ class Background {
     dynamic_background(cond) {
         if (cond.includes("thunderstorm") || cond.includes("rain")) {
             this.set_current_background(1);
-            document.body.style.background = `url(${_links[1]}) no-repeat`;
+            document.body.style.background = `url(${this._links[1]}) no-repeat`;
             document.body.style.backgroundSize = 'cover';
         }
         else if (cond.includes("clouds") || cond.includes("sky")) {
             this.set_current_background(0);
-            document.body.style.background = `url(${_links[0]}) no-repeat`;
+            document.body.style.background = `url(${this._links[0]}) no-repeat`;
             document.body.style.backgroundSIze = 'cover';
         }
         // add third snowy condition?

@@ -112,6 +112,83 @@ class Data {
 
 }
 
+class Background {
+    constructor(cond) {
+        this._links = [
+            "/Users/jakeopie/weatherApp/images/sunnyWeather.jpeg",
+            "/Users/jakeopie/weatherApp/images/rainyWeather.jpeg",
+            "/Users/jakeopie/weatherApp/images/starsInSky.jpeg"
+        ];
+        this._default_background = 0;
+        this._current_background = 0;
+        this._conditions = '';
+        this._current_conditions = cond;
+    }
+
+    //let w = 0 ;;; w is not _current_background;
+    //cycle_background to next background; mainly used for testing
+    //can add button to call this method
+    cycle_background() {
+        let myNum = this.get_current_background();
+        if (myNum == 2) {
+            this.set_current_background(0);
+        }
+        else {
+            this.set_current_background(myNum += 1);
+        }
+        document.body.style.background = `url(${this._links[this.get_current_background()]}) no-repeat`;
+        document.body.style.backgroundSize = 'cover';
+    }
+
+    //set background to default in case of extra condition (hail, etc)
+    default_background() {
+        document.body.style.background = `url(${this._links[0]}) no-repeat`;
+        document.body.style.backgroundSize = 'cover';
+    }
+
+    //main background changing function
+    //need to pass in weather[0]['main'] as cond, i think
+    //if not, use weather[0]['id'] and use condition codes
+    dynamic_background(cond) {
+        if (cond.includes("thunderstorm") || cond.includes("rain")) {
+            this.set_current_background(1);
+            document.body.style.background = `url(${this._links[1]}) no-repeat`;
+            document.body.style.backgroundSize = 'cover';
+        }
+        else if (cond.includes("clouds") || cond.includes("sky")) {
+            this.set_current_background(0);
+            document.body.style.background = `url(${this._links[0]}) no-repeat`;
+            document.body.style.backgroundSIze = 'cover';
+        }
+        // add third snowy condition?
+    }
+
+    //plain black background
+    //add button to call this function
+    clear_background() {
+        document.body.style.backgroundColor = 'black'; 
+    }
+
+    //getters and setters necessary
+    get_current_conditions() {
+        return this._current_conditions;
+    }
+    set_current_conditions(cond) {
+        this._current_conditions = cond;
+    }
+
+    get_current_background() {
+        return this._current_background;
+    }
+    set_current_background(bg) {
+        this._current_background = bg;
+    }
+
+    get_default_background() {
+        return this._default_background;
+    }
+}
+
 // access to temperature DOM elements
 const tempHandle = document.querySelector('.disp');
 // access to condition DOM elements
@@ -132,13 +209,28 @@ const themeObj = new Theme(displayHandle, dataHandle, titleHandle);
 //init data object
 const dataObj = new Data('Current Location', '#ffffff');
 
+//init background object
+const backgroundObj = new Background('sunny');
 
+//color changing for theme
 function changeCol() {
     const newColor = document.getElementById("colorPicker").value;
     themeObj.update_color(newColor);
     testHandle.style.color = newColor;
 }
 
-//Add logic for retrieving data from API and changing location and temps
+//call whenever the API is called, after data is received and
+//condition is parsed
+function dynBg(cond) {
+    backgroundObj.dynamic_background(cond);
+}
 
+//for testing class and cycle button
+function cycleBg() {
+    backgroundObj.cycle_background();
+}
+
+
+//Add logic for retrieving data from API and changing location and temps
+//Weather Class Functionality
 
