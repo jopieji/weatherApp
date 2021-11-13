@@ -13,19 +13,17 @@
 <body id="bodybg">
     <h1 id="mainHeader">Weather App</h1>
     <br>
-    <div><h4>Current Location: <span id="city">Chicago</span></h4></div>
+    <div><h4>Current Location: <span id="cityTitle">Chicago</span></h4></div>
     <br>
     <hr class="normalHr">
     <br>
     <div id='spacer'>
     </div>
-    <p class="disp" id="temp">Hello</p>
-    <p class="testCond" id="cond">Hello</p>
     <input type='color' id="colorPicker" name="colorPicker">
     <button id="colorSubmit" onclick="changeCol()">Submit Color</button>
     <div id='daysInWeek'>
         <h4 id='days'>
-            <span class="displayGrid"> Monday </span>
+            <span class="disp" id="temp"> Temperature </span>
             <!--<span class="displayGrid" id='dayTwo'> Tuesday </span>
             <span class="displayGrid" id='dayThree'> Wednesday </span>
             <span class="displayGrid" id='dayFour'> Thursday </span>
@@ -37,7 +35,7 @@
     <hr id="weatherGrid">
     <div id="weatherData">
         <h4 id='data'>
-            <span class="displayGrid" > 0 </span>
+            <span class="disp" id="cond"> Condition </span>
             <!--- <span class="displayGrid" id="dataTwo"> 0 </span>
             <span class="displayGrid" id='dataThree'> 0 </span>
             <span class="displayGrid" id='dataFour'> 0 </span>

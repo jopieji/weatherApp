@@ -1,3 +1,10 @@
+//changes cities to title case
+function toTitle(str) {
+    return str.toLowerCase().split(' ').map(function (word){
+        return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(" ");
+}
+
 // Theme Class
 // Handles color changing of display and text
 class Theme {
@@ -81,7 +88,7 @@ class Data {
     //change today's condition
     change_today_conditions(cond) {
         this.set_today_conditions(cond);
-        condHandle.innerHTML = this.get_today_conditions();
+        condHandle.innerHTML = toTitle(this.get_today_conditions());
     }
 
     //getters and setter necessary
@@ -150,7 +157,7 @@ class Background {
     //need to pass in weather[0]['main'] as cond, i think
     //if not, use weather[0]['id'] and use condition codes
     dynamic_background(cond) {
-        if (cond.includes("thunderstorm") || cond.includes("rain")) {
+        if (cond.includes("thunderstorm") || cond.includes("rain") || cond.includes("snow")) {
             this.set_current_background(1);
             document.body.style.background = `url(${this._links[1]}) no-repeat`;
             document.body.style.backgroundSize = 'cover';
@@ -268,7 +275,7 @@ class Weather {
 
     create_URL() {
         let cityName = document.getElementById("locationField").value;
-        return 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid='+OWA_KEY+'&units=imperial'
+        return 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid='+this._key+'&units=imperial'
     }
 
     fetch_weather() {
@@ -334,21 +341,21 @@ class Weather {
     }
 }
 
-//KEY 
-let OWA_KEY = 'b22ee093d19114446572f72c3a77645b';
+//KEY HERE named OWA_KEY
+
 
 // access to temperature DOM elements
-const tempHandle = document.querySelector('.disp');
+const tempHandle = document.getElementById('temp');
 // access to condition DOM elements
-const condHandle = document.querySelector(".testCond")
+const condHandle = document.getElementById("cond")
 // choose better name for displayHandle probably
 const displayHandle = document.querySelector(".disp");
 // access to Day/Display DOM elements
 const dataHandle = document.querySelector(".displayGrid");
 // access to title DOM elements
-const titleHandle = document.getElementById("mainHeader");
+const titleHandle = document.getElementById("cityTitle");
 // test; connected to temperature DOM elements
-const testHandle = document.querySelector(".disp");
+//const condHandle = document.querySelector("#cond");
 
 //init theme object
 //might need change dataHandle input to data object
@@ -364,17 +371,23 @@ const backgroundObj = new Background('sunny');
 const inputObject = new Inputs();
 
 //init weather object
-const weatherObject = new Weather();
+const weatherObject = new Weather(OWA_KEY);
 
 //color changing for theme
 function changeCol() {
     const newColor = document.getElementById("colorPicker").value;
     themeObj.update_color(newColor);
-    testHandle.style.color = newColor;
+    //tempHandle.style.color = newColor;
+    //condHandle.style.color = newColor;
 }
 
 //Add logic for retrieving data from API and changing location and temps
 //Weather Class Functionality
+function getWeather() {
+    weatherObject.fetch_weather();
+    dataObj.change_location(weatherObject.location);
+
+}
 
 //code here for api logic
 
