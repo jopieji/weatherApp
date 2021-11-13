@@ -8,9 +8,9 @@ function toTitle(str) {
 // Theme Class
 // Handles color changing of display and text
 class Theme {
-    constructor(display, data, title) {
-        this.display_handle = display;
-        this.data_handle = data;
+    constructor(temp, cond, title) {
+        this.temp_handle = temp;
+        this.cond_handle = cond;
         this.title_handle = title;
         this.default_color = '#ffffff';
         this.current_color = '#ffffff';
@@ -19,8 +19,8 @@ class Theme {
     //update color on webpage
     update_color(newcolor) {
         this.set_current_color(newcolor);
-        this.display_handle.style.color = this.get_current_color();
-        this.data_handle.style.color = this.get_current_color();
+        this.temp_handle.style.color = this.get_current_color();
+        this.cond_handle.style.color = this.get_current_color();
         this.title_handle.style.color = this.get_current_color();
         //this.data_handle.style.borderRight = `10px solid ${this.get_current_color()}`;
     }
@@ -29,8 +29,8 @@ class Theme {
     //need add button to set color to white
     paint_default_color() {
         this.set_current_color(this.get_default_color());
-        this.display_handle.style.color = this.get_current_color();
-        this.data_handle.style.color = this.get_current_color();
+        this.temp_handle.style.color = this.get_current_color();
+        this.cond_handle.style.color = this.get_current_color();
         this.title_handle.style.color = this.get_current_color();
     }
 
@@ -47,12 +47,12 @@ class Theme {
         return this.default_color;
     }
     
-    get_display_handle() {
-        return this.display_handle;
+    get_temp_handle() {
+        return this.temp_handle;
     }
 
-    get_data_handle() {
-        return this.data_handle;
+    get_cond_handle() {
+        return this.cond_handle;
     }
 
     get_title_handle() {
@@ -342,7 +342,8 @@ class Weather {
 }
 
 //KEY HERE named OWA_KEY
-let OWA_KEY = 'b22ee093d19114446572f72c3a77645b';
+
+
 
 // access to temperature DOM elements
 const tempHandle = document.getElementById('temp');
@@ -359,7 +360,7 @@ const titleHandle = document.getElementById("cityTitle");
 
 //init theme object
 //might need change dataHandle input to data object
-const themeObj = new Theme(displayHandle, dataHandle, titleHandle);
+const themeObj = new Theme(tempHandle, condHandle, titleHandle);
 
 //init data object
 const dataObj = new Data('Current Location', '#ffffff');
