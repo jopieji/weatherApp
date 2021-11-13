@@ -178,3 +178,145 @@ class Background {
         return this._default_background;
     }
 }
+
+//Inputs Class to handle inputs and API Request Frequency
+//maybe add method to get date and date for better display
+class Inputs {
+    constructor() {
+        this.current_location = "Chicago";
+        this.default_location = "Chicago";
+        this.date_obj = new Date();
+        this._last_time = this.date_obj.getSeconds();
+        this._current_time = this.date_obj.getSeconds();
+    }
+
+    //for submitting location from field to weather api class
+    submit_location() {
+        let header = document.getElementById('mainHeader')
+        let field = document.getElementById("locationField").value
+        // code below gets the value of the input field
+        header.innerHTML = toTitle(field)
+        //return field ;;; maybe to pass into weather API or
+        // can keep them separate
+    }
+    
+    //update last time to signify last time api was called
+    update_time() {
+        this.set_last_time();
+    }
+
+    //check this condition before calling API to prevent overloading requests
+    check_time_diff() {
+        if (Math.abs(this.get_current_time() - this.get_last_time()) < 3) {
+            return false;
+        }
+        return true;
+    }
+
+    //error shown when request too soon
+    show_error() {
+        alert("Couldn't process request");
+    }
+
+    //getters and setters
+    get_current_location() {
+        return this.current_location;
+    }
+    set_current_location(loc) {
+        this.current_location = loc;
+    }
+
+    get_default_location() {
+        return this.default_location;
+    }
+
+    get_last_time() {
+        return this._last_time;
+    }
+    set_last_time() {
+        this._last_time = this.date_obj.getSeconds();
+    }
+
+    get_current_time() {
+        this._current_time = this.date_obj.getSeconds();
+        return this._current_time;
+    }
+
+
+}
+
+class Weather {
+    constructor(key, url) {
+        this._key = key;
+        this._url = url;
+        this.location = 'Chicago';
+        this.current_temp = 0;
+        this.current_high = 0;
+        this.current_low = 0;
+        this.current_condition = "Clear";
+    }
+
+    create_URL(city) {
+        let city = document.getElementById("locationField").value;
+        return 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+OWA_KEY+'&units=imperial'
+    }
+
+    fetch_weather() {
+        let city = document.getElementById("locationField").value;
+    fetch(this.create_URL(city))
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        const { temp } = data.main;
+        const { description } = data.weather[0];
+
+        dataObj.change_today_temps(temp);
+        dataObj.change_location(city);
+        dataObj.change_today_conditions(description);
+        //cond.innerHTML = `${description}`;
+        //temper.innerHTML = `${temp}`;
+    });
+    
+    }
+
+    get_current_temp() {
+        return this.current_temp;
+    }
+
+    set_current_temp(temp) {
+        this.current_temp = temp;
+    }
+
+    get_current_high() {
+        return this.current_high;
+    }
+
+    set_current_high(highTemp) {
+        this.current_high = highTemp;
+    }
+
+    get_current_low() {
+        return this.current_low;
+    }
+
+    set_current_low(lowTemp) {
+        this.current_low = lowTemp;
+    }
+
+    get_current_condition() {
+        return this.current_condition;
+    }
+
+    set_current_condition(cond) {
+        this.current_condition = cond;
+    }
+
+    get_location() {
+        return this.location;
+    }
+
+    set_location(loc) {
+        this.location = loc;
+    }
+}
