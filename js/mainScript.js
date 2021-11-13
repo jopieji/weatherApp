@@ -6,8 +6,6 @@ const listLinks = [
     "/Users/jakeopie/weatherApp/images/starsInSky.jpeg"
 ]
 
-//var key = 'b22ee093d19114446572f72c3a77645b'
-
 
 let w = 0
 

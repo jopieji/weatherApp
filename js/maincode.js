@@ -273,11 +273,13 @@ class Weather {
         this.current_condition = "Clear";
     }
 
+    //constructs URL using specific key and city name
     create_URL() {
         let cityName = document.getElementById("locationField").value;
         return 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid='+this._key+'&units=imperial'
     }
 
+    //method to fetch weather data from API
     fetch_weather() {
         let cityWeather = document.getElementById("locationField").value;
     fetch(this.create_URL(cityWeather))
@@ -285,21 +287,30 @@ class Weather {
         return response.json();
     })
     .then((data) => {
-        const { temp } = data.main;
-        const { description } = data.weather[0];
+        //error handling
+        try {
+            const { temp } = data.main;
+            const { description } = data.weather[0];
+            dataObj.change_today_temps(temp);
+            dataObj.change_location(cityWeather);
+            dataObj.change_today_conditions(description);
+            this.set_current_temp(temp);
+            this.set_location(cityWeather);
+            this.set_current_condition(description);
+        }
+        catch {
+            inputObject.show_error();
+        }
+        
 
-        dataObj.change_today_temps(temp);
-        dataObj.change_location(cityWeather);
-        dataObj.change_today_conditions(description);
-        this.set_current_temp(temp);
-        this.set_location(cityWeather);
-        this.set_current_condition(description);
+        
         //cond.innerHTML = `${description}`;
         //temper.innerHTML = `${temp}`;
     });
     
     }
 
+    //getters and setters
     get_current_temp() {
         return this.current_temp;
     }
@@ -342,7 +353,6 @@ class Weather {
 }
 
 //KEY HERE named OWA_KEY
-
 
 
 // access to temperature DOM elements
@@ -390,7 +400,6 @@ function getWeather() {
     backgroundObj.dynamic_background(weatherObject.get_current_condition());
 }
 
-//code here for api logic
 
 //call whenever the API is called, after data is received and
 //condition is parsed
