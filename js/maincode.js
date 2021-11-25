@@ -162,7 +162,7 @@ class Background {
             document.body.style.background = `url(${this._links[1]}) no-repeat`;
             document.body.style.backgroundSize = 'cover';
         }
-        else if (cond.includes("Clouds") || cond.includes("Sky") == cond.includes("Clear")) {
+        else if (cond.includes("clouds") || cond.includes("sky") == cond.includes("clear")) {
             this.set_current_background(0);
             document.body.style.background = `url(${this._links[0]}) no-repeat`;
             document.body.style.backgroundSize = 'cover';
@@ -353,7 +353,7 @@ class Weather {
 }
 
 //KEY HERE named OWA_KEY
-
+let OWA_KEY = 'b22ee093d19114446572f72c3a77645b';
 
 // access to temperature DOM elements
 const tempHandle = document.getElementById('temp');
@@ -397,6 +397,7 @@ function changeCol() {
 function getWeather() {
     weatherObject.fetch_weather();
     dataObj.change_location(weatherObject.location);
+    //setTimeout(backgroundObj.dynamic_background(weatherObject.get_current_condition()), 1000000);
     backgroundObj.dynamic_background(weatherObject.get_current_condition());
 }
 
