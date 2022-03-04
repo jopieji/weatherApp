@@ -11,7 +11,6 @@ The tech stack I will initially be using is just plain JavaScript and HTML/CSS, 
 * Be able to change location
 * No login required
 * The background should change based on the weather
-* Provide a week worth's of temperatures and weather conditions
 * Maybe implement basic SMTP notifications
 * Theme/color options
 ---
