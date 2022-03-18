@@ -29,7 +29,7 @@ h1, h4 {
 
   #bodybg {
     background-size:cover;
-    background-image: url('/Users/jakeopie/weatherApp/images/rainyWeather.jpeg');
+    background-image: url('images/sunnyWeather.jpeg');
   }
 
   #bot-links {
