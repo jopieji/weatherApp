@@ -14,5 +14,7 @@ The tech stack I will initially be using is just plain JavaScript and HTML/CSS, 
 * Maybe implement basic SMTP notifications
 * Theme/color options
 ---
+I don't like how planned out this project was. It was good to gain experience, but I'd rather have just completed it via trial and error instead of having so much planning. It's probably more readable than any other project I have posted, but I still didn't enjoy the process. I think projects are more about the journey than the end result: that's where the learning is done, and where you grow.
+---
 ## Link to Format Docs
 https://docs.google.com/document/d/1bEJm6vtrxQU456jbVAbEKhqocF28O3l-4HGLj6O2h0o/edit?usp=sharing
