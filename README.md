@@ -14,5 +14,8 @@ The tech stack I will initially be using is just plain JavaScript and HTML/CSS, 
 * Maybe implement basic SMTP notifications
 * Theme/color options
 ---
+## Hindsight
+This app was very antiquated, too beaureaucratic, and thus boring. It might be well organized, but it taught me how I don't like making personal projects: with too much planning. I'm glad I have experience making diagrams, thinking about architecture, and sticking to strict requirements, but the idea of the project didn't quite align with what the teacher had in mind.
+---
 ## Link to Format Docs
 https://docs.google.com/document/d/1bEJm6vtrxQU456jbVAbEKhqocF28O3l-4HGLj6O2h0o/edit?usp=sharing
