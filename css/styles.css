@@ -28,8 +28,8 @@ h1, h4 {
 }
 
   #bodybg {
-    background-size:cover;
-    background-image: url('images/sunnyWeather.jpeg');
+    background: url('../images/sunnyWeather.jpeg') no-repeat;
+    background-size: cover;
   }
 
   #bot-links {

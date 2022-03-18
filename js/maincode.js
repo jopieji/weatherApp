@@ -122,10 +122,11 @@ class Data {
 class Background {
     constructor(cond) {
         this._links = [
-            "/Users/jakeopie/weatherApp/images/sunnyWeather.jpeg",
-            "/Users/jakeopie/weatherApp/images/rainyWeather.jpeg",
-            "/Users/jakeopie/weatherApp/images/starsInSky.jpeg"
+            "../images/sunnyWeather.jpeg",
+            "../images/rainyWeather.jpeg",
+            "../images/starsInSky.jpeg"
         ];
+
         this._default_background = 0;
         this._current_background = 0;
         this._conditions = '';
@@ -398,7 +399,7 @@ function getWeather() {
     weatherObject.fetch_weather();
     dataObj.change_location(weatherObject.location);
     //setTimeout(backgroundObj.dynamic_background(weatherObject.get_current_condition()), 1000000);
-    backgroundObj.dynamic_background(weatherObject.get_current_condition());
+    //backgroundObj.dynamic_background(weatherObject.get_current_condition());
 }
 
 
